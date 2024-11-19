@@ -208,5 +208,25 @@
     "crumbs": [
       "Home"
     ]
+  },
+  {
+    "objectID": "index.html#assessing-link-usage",
+    "href": "index.html#assessing-link-usage",
+    "title": "Introduction",
+    "section": "Assessing Link Usage",
+    "text": "Assessing Link Usage\nBased on the number of effective routes calculates using the program, the number of efficient routes using a specific link can also be determined. This is particularly useful to determine the criticality or importance of a link in the network. It can also be used to determine the determine the number of routes that will be disrupted if a link is to fail.\nWhile this functionality is not currently implemented into the program, it can be calculated using the results matrix using the following:\n\\[\nN^{rs}_a=u(r,tail_a)\\times u(head_a,s)\n\\]\nwhere \\(N^{rs}_a\\) is the number of efficient routes between the OD pair ( \\(r\\), \\(s\\) ) that use link \\(a\\). \\(u(r,tail_a)\\) and \\(u(head_a,s)\\) are the calculated number of efficient routes between node pair \\((r,tail_a)\\) and \\((head_a,s)\\). If all traffic between the OD node pairs use link \\(a\\) then \\(N^{rs}_a\\) will be equal to \\(u(r,s)\\).",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#further-reading",
+    "href": "index.html#further-reading",
+    "title": "Introduction",
+    "section": "Further reading",
+    "text": "Further reading\nReaders interested in these methods or their interpretation are encouraged to read the paper from which these methods are based: https://doi.org/10.1016/j.trb.2018.05.014",
+    "crumbs": [
+      "Home"
+    ]
   }
 ]
