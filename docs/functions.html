@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.53">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Functions – Route Travel Diversity Documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./functions.html">Functions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Route Travel Diversity Documentation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Structures</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Cases</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements and Citations</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#this-page" id="toc-this-page" class="nav-link active" data-scroll-target="#this-page">This page</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a>
+  <ul class="collapse">
+  <li><a href="#parameter-input" id="toc-parameter-input" class="nav-link" data-scroll-target="#parameter-input">Parameter input</a></li>
+  <li><a href="#command-line-interface" id="toc-command-line-interface" class="nav-link" data-scroll-target="#command-line-interface">Command Line Interface</a></li>
+  <li><a href="#input-adjacency-list" id="toc-input-adjacency-list" class="nav-link" data-scroll-target="#input-adjacency-list">Input adjacency list</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a></li>
+  </ul></li>
+  <li><a href="#roadnetwork-class" id="toc-roadnetwork-class" class="nav-link" data-scroll-target="#roadnetwork-class">RoadNetwork Class</a>
+  <ul class="collapse">
+  <li><a href="#sssp_dijkstra_solver." id="toc-sssp_dijkstra_solver." class="nav-link" data-scroll-target="#sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></a></li>
+  <li><a href="#build_subnetwork." id="toc-build_subnetwork." class="nav-link" data-scroll-target="#build_subnetwork."><code>build_subnetwork(.)</code></a></li>
+  <li><a href="#efficient_routes." id="toc-efficient_routes." class="nav-link" data-scroll-target="#efficient_routes."><code>efficient_routes(.)</code></a></li>
+  </ul></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#write_results." id="toc-write_results." class="nav-link" data-scroll-target="#write_results."><code>write_results(.)</code></a></li>
+  <li><a href="#write_subnetwork." id="toc-write_subnetwork." class="nav-link" data-scroll-target="#write_subnetwork."><code>write_subnetwork(.)</code></a></li>
+  </ul></li>
+  <li><a href="#exception-handling-and-expected-behaviours" id="toc-exception-handling-and-expected-behaviours" class="nav-link" data-scroll-target="#exception-handling-and-expected-behaviours">Exception handling and expected behaviours</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><p>Functions</p></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="this-page" class="level2">
+<h2 class="anchored" data-anchor-id="this-page">This page</h2>
+<p>This page details the functionality and methods used in the program. It is intended to provide enough detail to understand the thinking and progression of the program, or to enable a user to extract or re-purpose individual methods or classes.</p>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<section id="parameter-input" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-input">Parameter input</h3>
+<p>The program commences with a call to <code>test_initialiser(.)</code> which takes the following arguments:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>start_nodes</td>
+<td>an integer or set of integers (space separated) specifying the origin or start nodes for which to compute from</td>
+</tr>
+<tr class="even">
+<td>start_index</td>
+<td>the starting index of the adjacency list, either 0 or 1</td>
+</tr>
+<tr class="odd">
+<td>input_path</td>
+<td>the file path to the adjacency list (a text file)</td>
+</tr>
+<tr class="even">
+<td>user_specified_write_results</td>
+<td>Boolean to write the resulting matrix/ matrices to a JSON and subnetwork adjacency list to a text file</td>
+</tr>
+<tr class="odd">
+<td>output_dir</td>
+<td>the output directory for the results to be written to (if user_specified_write_results is <code>TRUE</code>, else output_dir can be set <code>NULL</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Note that this program assesses single origin paths only. While many origin nodes can be inputted, each one is assessed individually and independently of the other specified origin nodes.</p>
+</section>
+<section id="command-line-interface" class="level3">
+<h3 class="anchored" data-anchor-id="command-line-interface">Command Line Interface</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The current implementation does not take an input for the output directory (output_dir). Instead the directory of the input file is used by default. Users wishing to specify a different output directory should use a direct function call.</p>
+</div>
+</div>
+<p>The function <code>test_initialiser(.)</code> can be called directly, but it is expected most users will initialise the program using the Command Line Interface (CLI) which collects the user’s responses and passes them to <code>test_initialiser(.)</code>. Under normal execution, the CLI is called from the <code>main()</code> function which will collect the user’s inputs using helper functions which enforce input class requirements and excepts any invalid inputs.</p>
+<p>see also:</p>
+<ul>
+<li><p><a href="#input-adjacency-list">Input adjacency list</a></p></li>
+<li><p><a href="#outputs">Outputs</a></p></li>
+</ul>
+</section>
+<section id="input-adjacency-list" class="level3">
+<h3 class="anchored" data-anchor-id="input-adjacency-list">Input adjacency list</h3>
+<p>The input path for the program should point to a text file containing the adjacency list for the network of interest. The adjacency list should contain the network links, one per line, in the format [<em>origin destination cost</em>]. The nodes and costs must be space seperated. An example from Test Graph A is presented below:</p>
+<pre><code>0 1 1
+1 2 1
+1 2 2
+1 2 3
+2 3 1</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only static costs can be considered by this program. It is not currently possible to consider dynamic costs such as those used for route assignment (e.g.&nbsp;The Bureau of Public Roads (BPR) function). It is recommended that the user use the free flow travel time or segment length if a free flow time is not available for a network.</p>
+</div>
+</div>
+</section>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data types</h3>
+<p>Once the input files are read they are stored in a the custom data structure <code>network_map</code> which contain the data class <code>Edge</code>. See the <em>Data Structures</em> page for details on the implementation and structure of these data structures.</p>
+</section>
+</section>
+<section id="roadnetwork-class" class="level2">
+<h2 class="anchored" data-anchor-id="roadnetwork-class">RoadNetwork Class</h2>
+<p>Once initialised, the program executes its core functionality using the <code>RoadNetwork</code> Class which contains the network information and functions to complete the program computations. The following sections contain an overview of the <code>RoadNetwork</code> Class functions.</p>
+<section id="sssp_dijkstra_solver." class="level3">
+<h3 class="anchored" data-anchor-id="sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></h3>
+<p>This function solves the Single-Source Shortest Path (SSSP) problem using the Dijkstra algorithm. SSSP solves the shortest path from origin to all other nodes. <code>sssp_dijkstra_solver(.)</code> requires the following inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>node</td>
+<td>The network origin node</td>
+</tr>
+<tr class="even">
+<td>network_map</td>
+<td>The network graph, stored as structure network_map</td>
+</tr>
+<tr class="odd">
+<td><em>d</em></td>
+<td><em>An initialised variable of type <code>vector&lt;double&gt;</code></em> <em>which will contain the shortest paths for each node. This variable is stored in the <code>RoadNetwork</code></em> <em>class.</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build_subnetwork." class="level3">
+<h3 class="anchored" data-anchor-id="build_subnetwork."><code>build_subnetwork(.)</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At present, the elongation ratio for the not-too-long criteria is a globally defined variable set to 1.6. It is planned to allow this value to be user specified.</p>
+</div>
+</div>
+<p>This function applies the short detour/ not-too-long criteria to the road network to subset the network to only nodes and links which meet the criteria.<code>build_subnetwork(.)</code> requires the following inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>network_map</td>
+<td>The network graph, stored as structure network_map</td>
+</tr>
+<tr class="even">
+<td><em>subnetwork_map</em></td>
+<td><em>An initialised variable of type subnetwork map which will contain the returned subsetted network graph, stored in the <code>RoadNetwork</code></em> Class</td>
+</tr>
+<tr class="odd">
+<td><em>d</em></td>
+<td><em>An initialised variable of type <code>vector&lt;double&gt;</code></em> <em>which will contain the shortest paths for each node. This variable is stored in the <code>RoadNetwork</code></em> <em>Class. This variable is initialised by the program if run through the <code>RoadNetwork</code></em> <em>Class - no user intervention required.</em></td>
+</tr>
+</tbody>
+</table>
+<p>The not-too-long criterion is enforced using an elongation ratio, <span class="math inline">\(\tau^a_r\)</span>, which typically ranges between 1.3 - 1.6 (this program uses 1.6 by default). The program uses the following mathematical expression to determine the sub-setted links and nodes:</p>
+<p><span class="math display">\[(1+\tau^a_r)(l_r(head_a) - l_r(tail_a))\geq l_a\]</span> where <span class="math inline">\(l_a\)</span> is the cost of link <span class="math inline">\(a\)</span>, <span class="math inline">\(head_a\)</span> and <span class="math inline">\(tail_a\)</span> are the head and tail of link <span class="math inline">\(a\)</span>, and <span class="math inline">\(l_r(head_a)\)</span> and <span class="math inline">\(l_r(tail_a)\)</span> are the cost from the origin <span class="math inline">\(r\)</span> to the head and tail of the link, respectively.</p>
+</section>
+<section id="efficient_routes." class="level3">
+<h3 class="anchored" data-anchor-id="efficient_routes."><code>efficient_routes(.)</code></h3>
+<p>This function applies the efficient route calculations. It takes the following inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>subnetwork_map</td>
+<td>A variable of type subnetwork map which will contain the subsetted network graph, stored in the <code>RoadNetwork</code> Class</td>
+</tr>
+<tr class="even">
+<td>index</td>
+<td>An integer specifying the starting index of the network nodes (0 or 1)</td>
+</tr>
+</tbody>
+</table>
+<p><code>efficient_routes(.)</code> begins by converting the subnetwork from type <code>subnetwork_map</code> to an adjacency matrix. At current, only one link can exist between two nodes per direction. The adjacency matrix will be of size <span class="math inline">\(n \times n\)</span> , where <span class="math inline">\(n\)</span> is the number of unique nodes in the subnetwork. The number of efficient routes is subsequently calculated using the following loop:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;=</span> number of nodes<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;=</span> number of nodes<span class="op">;</span> m<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>m <span class="op">==</span> j<span class="op">)</span> <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> n <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> n <span class="op">&lt;=</span> number of nodes<span class="op">;</span> n<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>n <span class="op">==</span> j <span class="op">||</span> n <span class="op">==</span> m<span class="op">)</span> <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                LinkMatrix<span class="op">[</span>m<span class="op">][</span>n<span class="op">]</span> <span class="op">+=</span> LinkMatrix<span class="op">[</span>m<span class="op">][</span>j<span class="op">]</span> <span class="op">*</span> LinkMatrix<span class="op">[</span>j<span class="op">][</span>n<span class="op">];</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The result is a matrix containing the number of efficient routes between the specified origin and all nodes subsetted from the network.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The required compute increases significantly with additional nodes in the network (algorithm is of order <span class="math inline">\(O(n^3)\)</span> ). This will result in long compute times for large networks.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="outputs" class="level2">
+<h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
+<p>The user has the option to save the results of the analysis when the program is initialised through <code>test_initialiser(.)</code>. Two outputs are created when the user specifies results to be saved.</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="write_results." class="level3">
+<h3 class="anchored" data-anchor-id="write_results."><code>write_results(.)</code></h3>
+<p>This function uses the <a href="https://github.com/nlohmann">JSON for Modern C++ library created by Nlohmann</a> to save the result matrices as into a single JSON file. The JSON format provides flexibility in saving several matrices of different sizes within a single file which cannot easily be achieved using a text file, for example.</p>
+<p>The <code>write_results(.)</code> function requires two inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>results</td>
+<td>a 3D matrix of integers comprised of one or more 2D result matrices</td>
+</tr>
+<tr class="even">
+<td>output_path</td>
+<td>a string specifying the output path (including file name and .JSON extension) for the results to be saved into</td>
+</tr>
+</tbody>
+</table>
+<p>When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_Results.json”</p>
+</section>
+<section id="write_subnetwork." class="level3">
+<h3 class="anchored" data-anchor-id="write_subnetwork."><code>write_subnetwork(.)</code></h3>
+<p>This function saves the subsetted network created from the <code>build_subnetwork(.)</code> function. It includes the links that meet the not-too-long criteria and is saved in the same format as the input adjacency list [origin destination cost]. The subsetted network is used in the <code>efficient_routes(.)</code>. Saving the subnetwork is useful for visualising the results, debugging, or further analysis.</p>
+<p>The function requires three inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>start_nodes</td>
+<td>a vector of integers containing the user specified start nodes</td>
+</tr>
+<tr class="even">
+<td>subnetwork_maps</td>
+<td>a vector containing the type <code>subnetwork_map</code> to store one or more subnetworks created from <code>build_subnetwork(.)</code>.</td>
+</tr>
+<tr class="odd">
+<td>output_path</td>
+<td>a string specifying the output path (including file name and .JSON extension) for the results to be saved into</td>
+</tr>
+</tbody>
+</table>
+<p>The subnetworks are saved as a text file. When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_SubNetwork.txt”</p>
+</section>
+</section>
+<section id="exception-handling-and-expected-behaviours" class="level2">
+<h2 class="anchored" data-anchor-id="exception-handling-and-expected-behaviours">Exception handling and expected behaviours</h2>
+<p>&lt;I haven’t written this part yet 😀&gt;</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© CNRE, 2024.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://canterbury.ac.nz/civil/">
+      <i class="bi bi-globe" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
