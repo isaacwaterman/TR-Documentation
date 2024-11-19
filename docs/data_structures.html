@@ -9,163 +9,6 @@
 
 <title>Data Structures – Route Travel Diversity Documentation</title>
 <style>
-html {
-  color: #1a1a1a;
-  background-color: #fdfdfd;
-}
-body {
-  margin: 0 auto;
-  max-width: 36em;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-}
-@media (max-width: 600px) {
-  body {
-    font-size: 0.9em;
-    padding: 12px;
-  }
-  h1 {
-    font-size: 1.8em;
-  }
-}
-@media print {
-  html {
-    background-color: white;
-  }
-  body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2, h3, h4 {
-    page-break-after: avoid;
-  }
-}
-p {
-  margin: 1em 0;
-}
-a {
-  color: #1a1a1a;
-}
-a:visited {
-  color: #1a1a1a;
-}
-img {
-  max-width: 100%;
-}
-svg {
-  height; auto;
-  max-width: 100%;
-}
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.4em;
-}
-h5, h6 {
-  font-size: 1em;
-  font-style: italic;
-}
-h6 {
-  font-weight: normal;
-}
-ol, ul {
-  padding-left: 1.7em;
-  margin-top: 1em;
-}
-li > ol, li > ul {
-  margin-top: 0;
-}
-ul > li:not(:has(> p)) > ul,
-ol > li:not(:has(> p)) > ul,
-ul > li:not(:has(> p)) > ol,
-ol > li:not(:has(> p)) > ol {
-  margin-bottom: 0;
-}
-ul > li:not(:has(> p)) > ul > li:has(> p),
-ol > li:not(:has(> p)) > ul > li:has(> p),
-ul > li:not(:has(> p)) > ol > li:has(> p),
-ol > li:not(:has(> p)) > ol > li:has(> p) {
-  margin-top: 1rem;
-}
-blockquote {
-  margin: 1em 0 1em 1.7em;
-  padding-left: 1em;
-  border-left: 2px solid #e6e6e6;
-  color: #606060;
-}
-code {
-  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-  font-size: 85%;
-  margin: 0;
-  hyphens: manual;
-}
-pre {
-  margin: 1em 0;
-  overflow: auto;
-}
-pre code {
-  padding: 0;
-  overflow: visible;
-  overflow-wrap: normal;
-}
-.sourceCode {
- background-color: transparent;
- overflow: visible;
-}
-hr {
-  background-color: #1a1a1a;
-  border: none;
-  height: 1px;
-  margin: 1em 0;
-}
-table {
-  margin: 1em 0;
-  border-collapse: collapse;
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-table caption {
-  margin-bottom: 0.75em;
-}
-tbody {
-  margin-top: 0.5em;
-  border-top: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
-}
-th {
-  border-top: 1px solid #1a1a1a;
-  padding: 0.25em 0.5em 0.25em 0.5em;
-}
-td {
-  padding: 0.125em 0.5em 0.25em 0.5em;
-}
-header {
-  margin-bottom: 4em;
-  text-align: center;
-}
-#TOC li {
-  list-style: none;
-}
-#TOC ul {
-  padding-left: 1.3em;
-}
-#TOC > ul {
-  padding-left: 0;
-}
-#TOC a:not(:hover) {
-  text-decoration: none;
-}
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -177,7 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { line-height: 1.25; }
@@ -215,49 +57,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked">
 
-
-<header id="title-block-header">
-<h1 class="title">Data Structures</h1>
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_structures.html">Data Structures</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
-
-<nav id="TOC" role="doc-toc">
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Route Travel Diversity Documentation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_structures.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Structures</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Cases</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements and Citations</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#this-page" id="toc-this-page">This page</a></li>
-  <li><a href="#network-data-structures" id="toc-network-data-structures">Network Data Structures</a>
-  <ul>
-  <li><a href="#graph-network-map-network_map" id="toc-graph-network-map-network_map">Graph Network Map (network_map)</a></li>
-  <li><a href="#graph-subnetwork-map-subnetwork_map" id="toc-graph-subnetwork-map-subnetwork_map">Graph Subnetwork Map (subnetwork_map)</a></li>
-  <li><a href="#graph-network-edges-g" id="toc-graph-network-edges-g">Graph Network Edges (G)</a></li>
+  <li><a href="#this-page" id="toc-this-page" class="nav-link active" data-scroll-target="#this-page">This page</a></li>
+  <li><a href="#network-data-structures" id="toc-network-data-structures" class="nav-link" data-scroll-target="#network-data-structures">Network Data Structures</a>
+  <ul class="collapse">
+  <li><a href="#graph-network-map-network_map" id="toc-graph-network-map-network_map" class="nav-link" data-scroll-target="#graph-network-map-network_map">Graph Network Map (network_map)</a></li>
+  <li><a href="#graph-subnetwork-map-subnetwork_map" id="toc-graph-subnetwork-map-subnetwork_map" class="nav-link" data-scroll-target="#graph-subnetwork-map-subnetwork_map">Graph Subnetwork Map (subnetwork_map)</a></li>
+  <li><a href="#graph-network-edges-g" id="toc-graph-network-edges-g" class="nav-link" data-scroll-target="#graph-network-edges-g">Graph Network Edges (G)</a></li>
   </ul></li>
-  <li><a href="#custom-structures" id="toc-custom-structures">Custom Structures</a>
-  <ul>
-  <li><a href="#edge" id="toc-edge">Edge</a></li>
+  <li><a href="#custom-structures" id="toc-custom-structures" class="nav-link" data-scroll-target="#custom-structures">Custom Structures</a>
+  <ul class="collapse">
+  <li><a href="#edge" id="toc-edge" class="nav-link" data-scroll-target="#edge">Edge</a></li>
   </ul></li>
   </ul>
 </nav>
-<h2 id="this-page" class="anchored">This page</h2>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Structures</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="this-page" class="level2">
+<h2 class="anchored" data-anchor-id="this-page">This page</h2>
 <p>This page contains a high level look into the data structures used to store and process network links. It is intended to provide some high level insight into the storage of the network structure which is critical to understanding how the program operates.</p>
-<h2 id="network-data-structures" class="anchored">Network Data Structures</h2>
-<h3 id="graph-network-map-network_map" class="anchored">Graph Network Map (network_map)</h3>
+</section>
+<section id="network-data-structures" class="level2">
+<h2 class="anchored" data-anchor-id="network-data-structures">Network Data Structures</h2>
+<section id="graph-network-map-network_map" class="level3">
+<h3 class="anchored" data-anchor-id="graph-network-map-network_map">Graph Network Map (network_map)</h3>
 <p>The data structure <code>network_map</code> is an unordered map containing an unordered map of vector objects in the <code>Edge</code> structure.</p>
 <ul>
 <li><p>The first (outer) unordered map has an integer index and represents the nodes within the network.</p></li>
@@ -293,19 +258,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 │   │   └── ...
 │   └── ...
 └── ...</code></pre>
-<h3 id="graph-subnetwork-map-subnetwork_map" class="anchored">Graph Subnetwork Map (subnetwork_map)</h3>
+</section>
+<section id="graph-subnetwork-map-subnetwork_map" class="level3">
+<h3 class="anchored" data-anchor-id="graph-subnetwork-map-subnetwork_map">Graph Subnetwork Map (subnetwork_map)</h3>
 <p>The structure <code>subnetwork_map</code> is similar to that of Graph Network Map (<code>network_map</code>) except the final vector class is of type <code>int</code>. The <code>Edge</code> structure is not needed here as it is only necessary to store the edge or link costs that meet the specified efficient route criteria, no regard is given to the specific node pair.</p>
 <p>The simplification of <code>subnetwork_map</code> saves computational time and storage in the construction and reading of the network when in use. It is constructed in <code>C++</code> as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&gt;&gt;</span> subnetwork_map<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="graph-network-edges-g" class="anchored">Graph Network Edges (G)</h3>
+</section>
+<section id="graph-network-edges-g" class="level3">
+<h3 class="anchored" data-anchor-id="graph-network-edges-g">Graph Network Edges (G)</h3>
 <p>The structure <code>G</code> contains the edge or link pairs between nodes. The first element represents the destination node. The second element represents the edge or link cost. The structure is used to store the provided adjacency list as it effectively stores the list of neighbouring nodes for each node in the graph.</p>
 <p>For example:</p>
 <pre><code>G[i] = [(j,w), (k,x)]</code></pre>
 <p>The pair <code>(v,w)</code> represents the link from node <code>i</code> to node <code>j</code> which has cost <code>w</code>. The node <code>i</code> also has another edge represented by pair <code>(k,x)</code> which corresponds to an edge between node <code>i</code> to node <code>k</code> with cost <code>x.</code></p>
 <p>The structure G is initialised by:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">std::</span>vector<span class="op">&lt;</span><span class="bu">std::</span>pair<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">&gt;&gt;</span> G<span class="op">[</span>n<span class="op">]</span> <span class="co">// Create 'n' number of nodes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h2 id="custom-structures" class="anchored">Custom Structures</h2>
-<h3 id="edge" class="anchored">Edge</h3>
+</section>
+</section>
+<section id="custom-structures" class="level2">
+<h2 class="anchored" data-anchor-id="custom-structures">Custom Structures</h2>
+<section id="edge" class="level3">
+<h3 class="anchored" data-anchor-id="edge">Edge</h3>
 <p>The <code>Edge</code> structure contains information about each edge or link between two nodes:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Edge <span class="op">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> u<span class="op">;</span> <span class="co">// Start node</span></span>
@@ -316,6 +289,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>usage_counter</code> is initially set to 0 and is incremented only when calculating the number of times a link is used when finding the efficient routes through the network.</p>
 
 
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -336,10 +313,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-  tabsets.forEach(function(tabset) {
-    const tabby = new Tabby('#' + tabset.id);
-  });
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -439,7 +412,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       },
       interactive: true,
       interactiveBorder: 10,
-      theme: 'light-border',
+      theme: 'quarto',
       placement: 'bottom-start',
     };
     if (contentFn) {
@@ -740,6 +713,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© CNRE, 2024.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaacwaterman/TransportRedundancy_RoadNetwork">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://canterbury.ac.nz/civil/">
+      <i class="bi bi-globe" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

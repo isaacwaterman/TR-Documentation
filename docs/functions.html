@@ -9,163 +9,6 @@
 
 <title>Functions – Route Travel Diversity Documentation</title>
 <style>
-html {
-  color: #1a1a1a;
-  background-color: #fdfdfd;
-}
-body {
-  margin: 0 auto;
-  max-width: 36em;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  font-kerning: normal;
-}
-@media (max-width: 600px) {
-  body {
-    font-size: 0.9em;
-    padding: 12px;
-  }
-  h1 {
-    font-size: 1.8em;
-  }
-}
-@media print {
-  html {
-    background-color: white;
-  }
-  body {
-    background-color: transparent;
-    color: black;
-    font-size: 12pt;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2, h3, h4 {
-    page-break-after: avoid;
-  }
-}
-p {
-  margin: 1em 0;
-}
-a {
-  color: #1a1a1a;
-}
-a:visited {
-  color: #1a1a1a;
-}
-img {
-  max-width: 100%;
-}
-svg {
-  height; auto;
-  max-width: 100%;
-}
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.4em;
-}
-h5, h6 {
-  font-size: 1em;
-  font-style: italic;
-}
-h6 {
-  font-weight: normal;
-}
-ol, ul {
-  padding-left: 1.7em;
-  margin-top: 1em;
-}
-li > ol, li > ul {
-  margin-top: 0;
-}
-ul > li:not(:has(> p)) > ul,
-ol > li:not(:has(> p)) > ul,
-ul > li:not(:has(> p)) > ol,
-ol > li:not(:has(> p)) > ol {
-  margin-bottom: 0;
-}
-ul > li:not(:has(> p)) > ul > li:has(> p),
-ol > li:not(:has(> p)) > ul > li:has(> p),
-ul > li:not(:has(> p)) > ol > li:has(> p),
-ol > li:not(:has(> p)) > ol > li:has(> p) {
-  margin-top: 1rem;
-}
-blockquote {
-  margin: 1em 0 1em 1.7em;
-  padding-left: 1em;
-  border-left: 2px solid #e6e6e6;
-  color: #606060;
-}
-code {
-  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-  font-size: 85%;
-  margin: 0;
-  hyphens: manual;
-}
-pre {
-  margin: 1em 0;
-  overflow: auto;
-}
-pre code {
-  padding: 0;
-  overflow: visible;
-  overflow-wrap: normal;
-}
-.sourceCode {
- background-color: transparent;
- overflow: visible;
-}
-hr {
-  background-color: #1a1a1a;
-  border: none;
-  height: 1px;
-  margin: 1em 0;
-}
-table {
-  margin: 1em 0;
-  border-collapse: collapse;
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-table caption {
-  margin-bottom: 0.75em;
-}
-tbody {
-  margin-top: 0.5em;
-  border-top: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
-}
-th {
-  border-top: 1px solid #1a1a1a;
-  padding: 0.25em 0.5em 0.25em 0.5em;
-}
-td {
-  padding: 0.125em 0.5em 0.25em 0.5em;
-}
-header {
-  margin-bottom: 4em;
-  text-align: center;
-}
-#TOC li {
-  list-style: none;
-}
-#TOC ul {
-  padding-left: 1.3em;
-}
-#TOC > ul {
-  padding-left: 0;
-}
-#TOC a:not(:hover) {
-  text-decoration: none;
-}
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -177,7 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { line-height: 1.25; }
@@ -215,61 +57,213 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar docked">
 
-
-<header id="title-block-header">
-<h1 class="title"><p>Functions</p></h1>
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./functions.html">Functions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
-
-<nav id="TOC" role="doc-toc">
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Route Travel Diversity Documentation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Structures</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./test_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Cases</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements and Citations</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#this-page" id="toc-this-page">This page</a></li>
-  <li><a href="#inputs" id="toc-inputs">Inputs</a>
-  <ul>
-  <li><a href="#parameter-input" id="toc-parameter-input">Parameter input</a></li>
-  <li><a href="#command-line-interface" id="toc-command-line-interface">Command Line Interface</a></li>
-  <li><a href="#input-adjacency-list" id="toc-input-adjacency-list">Input adjacency list</a></li>
-  <li><a href="#data-types" id="toc-data-types">Data types</a></li>
+  <li><a href="#this-page" id="toc-this-page" class="nav-link active" data-scroll-target="#this-page">This page</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a>
+  <ul class="collapse">
+  <li><a href="#parameter-input" id="toc-parameter-input" class="nav-link" data-scroll-target="#parameter-input">Parameter input</a></li>
+  <li><a href="#command-line-interface" id="toc-command-line-interface" class="nav-link" data-scroll-target="#command-line-interface">Command Line Interface</a></li>
+  <li><a href="#input-adjacency-list" id="toc-input-adjacency-list" class="nav-link" data-scroll-target="#input-adjacency-list">Input adjacency list</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a></li>
   </ul></li>
-  <li><a href="#roadnetwork-class" id="toc-roadnetwork-class">RoadNetwork Class</a>
-  <ul>
-  <li><a href="#sssp_dijkstra_solver." id="toc-sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></a></li>
-  <li><a href="#build_subnetwork." id="toc-build_subnetwork."><code>build_subnetwork(.)</code></a></li>
-  <li><a href="#efficient_routes." id="toc-efficient_routes."><code>efficient_routes(.)</code></a></li>
+  <li><a href="#roadnetwork-class" id="toc-roadnetwork-class" class="nav-link" data-scroll-target="#roadnetwork-class">RoadNetwork Class</a>
+  <ul class="collapse">
+  <li><a href="#sssp_dijkstra_solver." id="toc-sssp_dijkstra_solver." class="nav-link" data-scroll-target="#sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></a></li>
+  <li><a href="#build_subnetwork." id="toc-build_subnetwork." class="nav-link" data-scroll-target="#build_subnetwork."><code>build_subnetwork(.)</code></a></li>
+  <li><a href="#efficient_routes." id="toc-efficient_routes." class="nav-link" data-scroll-target="#efficient_routes."><code>efficient_routes(.)</code></a></li>
   </ul></li>
-  <li><a href="#outputs" id="toc-outputs">Outputs</a>
-  <ul>
-  <li><a href="#section" id="toc-section"></a></li>
-  <li><a href="#write_results." id="toc-write_results."><code>write_results(.)</code></a></li>
-  <li><a href="#write_subnetwork." id="toc-write_subnetwork."><code>write_subnetwork(.)</code></a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#write_results." id="toc-write_results." class="nav-link" data-scroll-target="#write_results."><code>write_results(.)</code></a></li>
+  <li><a href="#write_subnetwork." id="toc-write_subnetwork." class="nav-link" data-scroll-target="#write_subnetwork."><code>write_subnetwork(.)</code></a></li>
   </ul></li>
-  <li><a href="#exception-handling-and-expected-behaviours" id="toc-exception-handling-and-expected-behaviours">Exception handling and expected behaviours</a></li>
+  <li><a href="#exception-handling-and-expected-behaviours" id="toc-exception-handling-and-expected-behaviours" class="nav-link" data-scroll-target="#exception-handling-and-expected-behaviours">Exception handling and expected behaviours</a></li>
   </ul>
 </nav>
-<h2 id="this-page" class="anchored">This page</h2>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><p>Functions</p></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="this-page" class="level2">
+<h2 class="anchored" data-anchor-id="this-page">This page</h2>
 <p>This page details the functionality and methods used in the program. It is intended to provide enough detail to understand the thinking and progression of the program, or to enable a user to extract or re-purpose individual methods or classes.</p>
-<h2 id="inputs" class="anchored">Inputs</h2>
-<h3 id="parameter-input" class="anchored">Parameter input</h3>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<section id="parameter-input" class="level3">
+<h3 class="anchored" data-anchor-id="parameter-input">Parameter input</h3>
 <p>The program commences with a call to <code>test_initialiser(.)</code> which takes the following arguments:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 66%">
@@ -298,12 +292,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Note that this program assesses single origin paths only. While many origin nodes can be inputted, each one is assessed individually and independently of the other specified origin nodes.</p>
-<h3 id="command-line-interface" class="anchored">Command Line Interface</h3>
-<div>
-<blockquote>
-<p><strong>Note</strong></p>
+</section>
+<section id="command-line-interface" class="level3">
+<h3 class="anchored" data-anchor-id="command-line-interface">Command Line Interface</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The current implementation does not take an input for the output directory (output_dir). Instead the directory of the input file is used by default. Users wishing to specify a different output directory should use a direct function call.</p>
-</blockquote>
+</div>
 </div>
 <p>The function <code>test_initialiser(.)</code> can be called directly, but it is expected most users will initialise the program using the Command Line Interface (CLI) which collects the user’s responses and passes them to <code>test_initialiser(.)</code>. Under normal execution, the CLI is called from the <code>main()</code> function which will collect the user’s inputs using helper functions which enforce input class requirements and excepts any invalid inputs.</p>
 <p>see also:</p>
@@ -311,26 +314,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="#input-adjacency-list">Input adjacency list</a></p></li>
 <li><p><a href="#outputs">Outputs</a></p></li>
 </ul>
-<h3 id="input-adjacency-list" class="anchored">Input adjacency list</h3>
+</section>
+<section id="input-adjacency-list" class="level3">
+<h3 class="anchored" data-anchor-id="input-adjacency-list">Input adjacency list</h3>
 <p>The input path for the program should point to a text file containing the adjacency list for the network of interest. The adjacency list should contain the network links, one per line, in the format [<em>origin destination cost</em>]. The nodes and costs must be space seperated. An example from Test Graph A is presented below:</p>
 <pre><code>0 1 1
 1 2 1
 1 2 2
 1 2 3
 2 3 1</code></pre>
-<div>
-<blockquote>
-<p><strong>Note</strong></p>
-<p>Only static costs can be considered by this program. It is not currently possible to consider dynamic costs such as those used for route assignment (e.g.&nbsp;The Bureau of Public Roads (BPR) function). It is recommended that the user use the free flow travel time or segment length if a free flow time is not available for a network.</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<h3 id="data-types" class="anchored">Data types</h3>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only static costs can be considered by this program. It is not currently possible to consider dynamic costs such as those used for route assignment (e.g.&nbsp;The Bureau of Public Roads (BPR) function). It is recommended that the user use the free flow travel time or segment length if a free flow time is not available for a network.</p>
+</div>
+</div>
+</section>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data types</h3>
 <p>Once the input files are read they are stored in a the custom data structure <code>network_map</code> which contain the data class <code>Edge</code>. See the <em>Data Structures</em> page for details on the implementation and structure of these data structures.</p>
-<h2 id="roadnetwork-class" class="anchored">RoadNetwork Class</h2>
+</section>
+</section>
+<section id="roadnetwork-class" class="level2">
+<h2 class="anchored" data-anchor-id="roadnetwork-class">RoadNetwork Class</h2>
 <p>Once initialised, the program executes its core functionality using the <code>RoadNetwork</code> Class which contains the network information and functions to complete the program computations. The following sections contain an overview of the <code>RoadNetwork</code> Class functions.</p>
-<h3 id="sssp_dijkstra_solver." class="anchored"><code>sssp_dijkstra_solver(.)</code></h3>
+<section id="sssp_dijkstra_solver." class="level3">
+<h3 class="anchored" data-anchor-id="sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></h3>
 <p>This function solves the Single-Source Shortest Path (SSSP) problem using the Dijkstra algorithm. SSSP solves the shortest path from origin to all other nodes. <code>sssp_dijkstra_solver(.)</code> requires the following inputs:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 73%">
@@ -350,15 +368,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<h3 id="build_subnetwork." class="anchored"><code>build_subnetwork(.)</code></h3>
-<div>
-<blockquote>
-<p><strong>Note</strong></p>
+</section>
+<section id="build_subnetwork." class="level3">
+<h3 class="anchored" data-anchor-id="build_subnetwork."><code>build_subnetwork(.)</code></h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>At present, the elongation ratio for the not-too-long criteria is a globally defined variable set to 1.6. It is planned to allow this value to be user specified.</p>
-</blockquote>
+</div>
 </div>
 <p>This function applies the short detour/ not-too-long criteria to the road network to subset the network to only nodes and links which meet the criteria.<code>build_subnetwork(.)</code> requires the following inputs:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 73%">
@@ -378,11 +405,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>The not-too-long criterion is enforced using an elongation ratio, <span class="math inline"><em>τ</em><sub><em>r</em></sub><sup><em>a</em></sup></span>, which typically ranges between 1.3 - 1.6 (this program uses 1.6 by default). The program uses the following mathematical expression to determine the sub-setted links and nodes:</p>
-<p><span class="math display">(1 + <em>τ</em><sub><em>r</em></sub><sup><em>a</em></sup>)(<em>l</em><sub><em>r</em></sub>(<em>h</em><em>e</em><em>a</em><em>d</em><sub><em>a</em></sub>) − <em>l</em><sub><em>r</em></sub>(<em>t</em><em>a</em><em>i</em><em>l</em><sub><em>a</em></sub>)) ≥ <em>l</em><sub><em>a</em></sub></span> where <span class="math inline"><em>l</em><sub><em>a</em></sub></span> is the cost of link <span class="math inline"><em>a</em></span>, <span class="math inline"><em>h</em><em>e</em><em>a</em><em>d</em><sub><em>a</em></sub></span> and <span class="math inline"><em>t</em><em>a</em><em>i</em><em>l</em><sub><em>a</em></sub></span> are the head and tail of link <span class="math inline"><em>a</em></span>, and <span class="math inline"><em>l</em><sub><em>r</em></sub>(<em>h</em><em>e</em><em>a</em><em>d</em><sub><em>a</em></sub>)</span> and <span class="math inline"><em>l</em><sub><em>r</em></sub>(<em>t</em><em>a</em><em>i</em><em>l</em><sub><em>a</em></sub>)</span> are the cost from the origin <span class="math inline"><em>r</em></span> to the head and tail of the link, respectively.</p>
-<h3 id="efficient_routes." class="anchored"><code>efficient_routes(.)</code></h3>
+<p>The not-too-long criterion is enforced using an elongation ratio, <span class="math inline">\(\tau^a_r\)</span>, which typically ranges between 1.3 - 1.6 (this program uses 1.6 by default). The program uses the following mathematical expression to determine the sub-setted links and nodes:</p>
+<p><span class="math display">\[(1+\tau^a_r)(l_r(head_a) - l_r(tail_a))\geq l_a\]</span> where <span class="math inline">\(l_a\)</span> is the cost of link <span class="math inline">\(a\)</span>, <span class="math inline">\(head_a\)</span> and <span class="math inline">\(tail_a\)</span> are the head and tail of link <span class="math inline">\(a\)</span>, and <span class="math inline">\(l_r(head_a)\)</span> and <span class="math inline">\(l_r(tail_a)\)</span> are the cost from the origin <span class="math inline">\(r\)</span> to the head and tail of the link, respectively.</p>
+</section>
+<section id="efficient_routes." class="level3">
+<h3 class="anchored" data-anchor-id="efficient_routes."><code>efficient_routes(.)</code></h3>
 <p>This function applies the efficient route calculations. It takes the following inputs:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 73%">
@@ -398,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p><code>efficient_routes(.)</code> begins by converting the subnetwork from type <code>subnetwork_map</code> to an adjacency matrix. At current, only one link can exist between two nodes per direction. The adjacency matrix will be of size <span class="math inline"><em>n</em> × <em>n</em></span> , where <span class="math inline"><em>n</em></span> is the number of unique nodes in the subnetwork. The number of efficient routes is subsequently calculated using the following loop:</p>
+<p><code>efficient_routes(.)</code> begins by converting the subnetwork from type <code>subnetwork_map</code> to an adjacency matrix. At current, only one link can exist between two nodes per direction. The adjacency matrix will be of size <span class="math inline">\(n \times n\)</span> , where <span class="math inline">\(n\)</span> is the number of unique nodes in the subnetwork. The number of efficient routes is subsequently calculated using the following loop:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;=</span> number of nodes<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> m <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> m <span class="op">&lt;=</span> number of nodes<span class="op">;</span> m<span class="op">++)</span> <span class="op">{</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>m <span class="op">==</span> j<span class="op">)</span> <span class="cf">continue</span><span class="op">;</span></span>
@@ -409,19 +438,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The result is a matrix containing the number of efficient routes between the specified origin and all nodes subsetted from the network.</p>
-<div>
-<blockquote>
-<p><strong>Caution</strong></p>
-<p>The required compute increases significantly with additional nodes in the network (algorithm is of order <span class="math inline"><em>O</em>(<em>n</em><sup>3</sup>)</span> ). This will result in long compute times for large networks.</p>
-</blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<h2 id="outputs" class="anchored">Outputs</h2>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The required compute increases significantly with additional nodes in the network (algorithm is of order <span class="math inline">\(O(n^3)\)</span> ). This will result in long compute times for large networks.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="outputs" class="level2">
+<h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
 <p>The user has the option to save the results of the analysis when the program is initialised through <code>test_initialiser(.)</code>. Two outputs are created when the user specifies results to be saved.</p>
-<h3 id="section" class="anchored"></h3>
-<h3 id="write_results." class="anchored"><code>write_results(.)</code></h3>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="write_results." class="level3">
+<h3 class="anchored" data-anchor-id="write_results."><code>write_results(.)</code></h3>
 <p>This function uses the <a href="https://github.com/nlohmann">JSON for Modern C++ library created by Nlohmann</a> to save the result matrices as into a single JSON file. The JSON format provides flexibility in saving several matrices of different sizes within a single file which cannot easily be achieved using a text file, for example.</p>
 <p>The <code>write_results(.)</code> function requires two inputs:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 73%">
@@ -438,10 +480,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_Results.json”</p>
-<h3 id="write_subnetwork." class="anchored"><code>write_subnetwork(.)</code></h3>
+</section>
+<section id="write_subnetwork." class="level3">
+<h3 class="anchored" data-anchor-id="write_subnetwork."><code>write_subnetwork(.)</code></h3>
 <p>This function saves the subsetted network created from the <code>build_subnetwork(.)</code> function. It includes the links that meet the not-too-long criteria and is saved in the same format as the input adjacency list [origin destination cost]. The subsetted network is used in the <code>efficient_routes(.)</code>. Saving the subnetwork is useful for visualising the results, debugging, or further analysis.</p>
 <p>The function requires three inputs:</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 73%">
@@ -462,10 +506,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>The subnetworks are saved as a text file. When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_SubNetwork.txt”</p>
-<h2 id="exception-handling-and-expected-behaviours" class="anchored">Exception handling and expected behaviours</h2>
+</section>
+</section>
+<section id="exception-handling-and-expected-behaviours" class="level2">
+<h2 class="anchored" data-anchor-id="exception-handling-and-expected-behaviours">Exception handling and expected behaviours</h2>
 <p>&lt;I haven’t written this part yet 😀&gt;</p>
 
 
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -486,10 +536,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-  tabsets.forEach(function(tabset) {
-    const tabby = new Tabby('#' + tabset.id);
-  });
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -589,7 +635,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       },
       interactive: true,
       interactiveBorder: 10,
-      theme: 'light-border',
+      theme: 'quarto',
       placement: 'bottom-start',
     };
     if (contentFn) {
@@ -890,6 +936,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© CNRE, 2024.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isaacwaterman/TransportRedundancy_RoadNetwork">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://canterbury.ac.nz/civil/">
+      <i class="bi bi-globe" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
