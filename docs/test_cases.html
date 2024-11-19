@@ -176,7 +176,6 @@ window.Quarto = {
   <li><a href="#this-page" id="toc-this-page" class="nav-link active" data-scroll-target="#this-page">This page</a></li>
   <li><a href="#case-a" id="toc-case-a" class="nav-link" data-scroll-target="#case-a">Case A</a>
   <ul class="collapse">
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
   <li><a href="#shortest-paths" id="toc-shortest-paths" class="nav-link" data-scroll-target="#shortest-paths">Shortest Paths</a></li>
   <li><a href="#efficient-routes" id="toc-efficient-routes" class="nav-link" data-scroll-target="#efficient-routes">Efficient Routes</a></li>
   </ul></li>
@@ -213,8 +212,6 @@ window.Quarto = {
 </section>
 <section id="case-a" class="level2">
 <h2 class="anchored" data-anchor-id="case-a">Case A</h2>
-<section id="about" class="level3">
-<h3 class="anchored" data-anchor-id="about">About</h3>
 <p>Test <code>Case A</code> (labelled <code>GraphA</code> in the test folder) is a simple network in form of an adjacency list. It is comprised of 4 nodes and 5 links, three links exist between nodes <code>2</code> and <code>3</code>. Edge costs are in range <code>[1,3]</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -222,7 +219,6 @@ window.Quarto = {
 <figcaption>Network Graph of Case A. Nodes are numbered <code>[0, 3]</code> and weights/ costs are assigned to each link.</figcaption>
 </figure>
 </div>
-</section>
 <section id="shortest-paths" class="level3">
 <h3 class="anchored" data-anchor-id="shortest-paths">Shortest Paths</h3>
 <p>Solving Case A using a single shortest path algorithm (SSSP) from Node <code>0</code> to each subsequent node gives the following results:</p>
@@ -258,10 +254,10 @@ window.Quarto = {
 <p>Using the not-too-long criterion with an elongation ratio of 1.6, the number of valid links and therefore efficient routes can be found. The validity of an efficient link can be determined using</p>
 <p><span class="math display">\[
 \begin{aligned}
-I_a \leq (1+\tau_r^a)(I_r(head_a)-I_r(tail_a))
+l_a \leq (1+\tau_r^a)(l_r(head_a)-l_r(tail_a))
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(I_a\)</span> is the link cost; <span class="math inline">\(\tau_r^a\)</span> is the elongation ration; <span class="math inline">\(I_r(head_a)\)</span> and <span class="math inline">\(I_r(tail_a)\)</span> are the shortest paths from origin to the head and tail nodes of the link, respectively. Each link in <code>Case A</code> can then be assessed. Between Nodes <code>0</code> and <code>1</code> there exists a single link:</p>
+<p>where <span class="math inline">\(l_a\)</span> is the link cost; <span class="math inline">\(\tau_r^a\)</span> is the elongation ration; <span class="math inline">\(l_r(head_a)\)</span> and <span class="math inline">\(l_r(tail_a)\)</span> are the shortest paths from origin to the head and tail nodes of the link, respectively. Each link in <code>Case A</code> can then be assessed. Between Nodes <code>0</code> and <code>1</code> there exists a single link:</p>
 <p><span class="math display">\[
 1 \leq (1+1.6)(1-0) \\
 1 \leq 2.6 \rightarrow \text{OK}
@@ -328,19 +324,8 @@ I_a \leq (1+\tau_r^a)(I_r(head_a)-I_r(tail_a))
 </section>
 <section id="case-c" class="level2">
 <h2 class="anchored" data-anchor-id="case-c">Case C</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that Case C is in adjacency matrix format which is not supported in the most recent version of the program</p>
-</div>
-</div>
+<p><code>Case C</code> is a simple network which has several efficient paths for a given OD pair. It contains 6 nodes and 7 links. Free flow travel time are in range [4,12].</p>
+<p><img src="images/GraphC.png" class="img-fluid"></p>
 
 
 </section>
