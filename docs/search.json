@@ -208,5 +208,25 @@
     "crumbs": [
       "Home"
     ]
+  },
+  {
+    "objectID": "usage.html#programmatic-integration",
+    "href": "usage.html#programmatic-integration",
+    "title": "usage",
+    "section": "Programmatic Integration",
+    "text": "Programmatic Integration\nThe program can be called directly through function calls from your custom applications. This method provides full programmatic control and is ideal for automated workflows and integration into existing systems.",
+    "crumbs": [
+      "usage"
+    ]
+  },
+  {
+    "objectID": "usage.html#command-line-interface",
+    "href": "usage.html#command-line-interface",
+    "title": "usage",
+    "section": "Command Line Interface",
+    "text": "Command Line Interface\nThe program includes a CLI for direct user interaction. The command line interface features:\n\nBuilt-in usage prompts\nInput validation and error checking\nProgress indicators for long-running operations\n\nBoth integration methods provide access to the same core assessment functionality.\n\n\n\nProgram initialisation\n\n\n\n\n\nExample usage of the program",
+    "crumbs": [
+      "usage"
+    ]
   }
 ]

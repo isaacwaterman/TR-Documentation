@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Structures – Route Travel Diversity Documentation</title>
+<title>usage – Route Travel Diversity Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -113,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_structures.html">Data Structures</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./usage.html">usage</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -146,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./usage.html" class="sidebar-item-text sidebar-link">
+  <a href="./usage.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">usage</span></a>
   </div>
 </li>
@@ -158,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_structures.html" class="sidebar-item-text sidebar-link active">
+  <a href="./data_structures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Structures</span></a>
   </div>
 </li>
@@ -184,17 +150,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#this-page" id="toc-this-page" class="nav-link active" data-scroll-target="#this-page">This page</a></li>
-  <li><a href="#network-data-structures" id="toc-network-data-structures" class="nav-link" data-scroll-target="#network-data-structures">Network Data Structures</a>
-  <ul class="collapse">
-  <li><a href="#graph-network-map-network_map" id="toc-graph-network-map-network_map" class="nav-link" data-scroll-target="#graph-network-map-network_map">Graph Network Map (network_map)</a></li>
-  <li><a href="#graph-subnetwork-map-subnetwork_map" id="toc-graph-subnetwork-map-subnetwork_map" class="nav-link" data-scroll-target="#graph-subnetwork-map-subnetwork_map">Graph Subnetwork Map (subnetwork_map)</a></li>
-  <li><a href="#graph-network-edges-g" id="toc-graph-network-edges-g" class="nav-link" data-scroll-target="#graph-network-edges-g">Graph Network Edges (G)</a></li>
-  </ul></li>
-  <li><a href="#custom-structures" id="toc-custom-structures" class="nav-link" data-scroll-target="#custom-structures">Custom Structures</a>
-  <ul class="collapse">
-  <li><a href="#edge" id="toc-edge" class="nav-link" data-scroll-target="#edge">Edge</a></li>
-  </ul></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#programmatic-integration" id="toc-programmatic-integration" class="nav-link" data-scroll-target="#programmatic-integration">Programmatic Integration</a></li>
+  <li><a href="#command-line-interface" id="toc-command-line-interface" class="nav-link" data-scroll-target="#command-line-interface">Command Line Interface</a></li>
   </ul>
 </nav>
     </div>
@@ -203,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Structures</h1>
+<h1 class="title">usage</h1>
 </div>
 
 
@@ -220,81 +178,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="this-page" class="level2">
-<h2 class="anchored" data-anchor-id="this-page">This page</h2>
-<p>This page contains a high level look into the data structures used to store and process network links. It is intended to provide some high level insight into the storage of the network structure which is critical to understanding how the program operates.</p>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
 </section>
-<section id="network-data-structures" class="level2">
-<h2 class="anchored" data-anchor-id="network-data-structures">Network Data Structures</h2>
-<section id="graph-network-map-network_map" class="level3">
-<h3 class="anchored" data-anchor-id="graph-network-map-network_map">Graph Network Map (network_map)</h3>
-<p>The data structure <code>network_map</code> is an unordered map containing an unordered map of vector objects in the <code>Edge</code> structure.</p>
+<section id="programmatic-integration" class="level2">
+<h2 class="anchored" data-anchor-id="programmatic-integration">Programmatic Integration</h2>
+<p>The program can be called directly through function calls from your custom applications. This method provides full programmatic control and is ideal for automated workflows and integration into existing systems.</p>
+</section>
+<section id="command-line-interface" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-interface">Command Line Interface</h2>
+<p>The program includes a CLI for direct user interaction. The command line interface features:</p>
 <ul>
-<li><p>The first (outer) unordered map has an integer index and represents the nodes within the network.</p></li>
-<li><p>The second (inner) unordered map is associated with a first (outer) unordered map. It represents the neighbouring nodes of each initial node in the network. The unordered map contains a <code>vector</code> object.</p></li>
-<li><p>The vector object is of type <code>Edge</code> and contains:</p>
-<ul>
-<li><p>The initial node index</p></li>
-<li><p>The neigbouring node index</p></li>
-<li><p>The edge or link cost</p></li>
-</ul></li>
+<li><p>Built-in usage prompts</p></li>
+<li><p>Input validation and error checking</p></li>
+<li><p>Progress indicators for long-running operations</p></li>
 </ul>
-<p>In <code>C++</code> the structure is initialised by. A representative diagram is also presented.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>vector<span class="op">&lt;</span>Edge<span class="op">&gt;&gt;&gt;</span> network_map<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>network_map
-├── node1
-│   ├── neighbour1
-│   │   ├── edge1
-│   │   ├── edge2
-│   │   └── ...
-│   ├── neighbour2
-│   │   ├── edge1
-│   │   ├── edge2
-│   │   └── ...
-│   └── ...
-├── node2
-│   ├── neighbour1
-│   │   ├── edge1
-│   │   ├── edge2
-│   │   └── ...
-│   ├── neighbour2
-│   │   ├── edge1
-│   │   ├── edge2
-│   │   └── ...
-│   └── ...
-└── ...</code></pre>
-</section>
-<section id="graph-subnetwork-map-subnetwork_map" class="level3">
-<h3 class="anchored" data-anchor-id="graph-subnetwork-map-subnetwork_map">Graph Subnetwork Map (subnetwork_map)</h3>
-<p>The structure <code>subnetwork_map</code> is similar to that of Graph Network Map (<code>network_map</code>) except the final vector class is of type <code>int</code>. The <code>Edge</code> structure is not needed here as it is only necessary to store the edge or link costs that meet the specified efficient route criteria, no regard is given to the specific node pair.</p>
-<p>The simplification of <code>subnetwork_map</code> saves computational time and storage in the construction and reading of the network when in use. It is constructed in <code>C++</code> as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>unordered_map<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="bu">std::</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&gt;&gt;</span> subnetwork_map<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="graph-network-edges-g" class="level3">
-<h3 class="anchored" data-anchor-id="graph-network-edges-g">Graph Network Edges (G)</h3>
-<p>The structure <code>G</code> contains the edge or link pairs between nodes. The first element represents the destination node. The second element represents the edge or link cost. The structure is used to store the provided adjacency list as it effectively stores the list of neighbouring nodes for each node in the graph.</p>
-<p>For example:</p>
-<pre><code>G[i] = [(j,w), (k,x)]</code></pre>
-<p>The pair <code>(v,w)</code> represents the link from node <code>i</code> to node <code>j</code> which has cost <code>w</code>. The node <code>i</code> also has another edge represented by pair <code>(k,x)</code> which corresponds to an edge between node <code>i</code> to node <code>k</code> with cost <code>x.</code></p>
-<p>The structure G is initialised by:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> <span class="bu">std::</span>vector<span class="op">&lt;</span><span class="bu">std::</span>pair<span class="op">&lt;</span><span class="dt">int</span><span class="op">,</span> <span class="dt">int</span><span class="op">&gt;&gt;</span> G<span class="op">[</span>n<span class="op">]</span> <span class="co">// Create 'n' number of nodes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="custom-structures" class="level2">
-<h2 class="anchored" data-anchor-id="custom-structures">Custom Structures</h2>
-<section id="edge" class="level3">
-<h3 class="anchored" data-anchor-id="edge">Edge</h3>
-<p>The <code>Edge</code> structure contains information about each edge or link between two nodes:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Edge <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> u<span class="op">;</span> <span class="co">// Start node</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> v<span class="op">;</span> <span class="co">// End node</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> cost<span class="op">;</span> <span class="co">// Cost of edge</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> usage_counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// number of times edge is used in an efficent route</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>usage_counter</code> is initially set to 0 and is incremented only when calculating the number of times a link is used when finding the efficient routes through the network.</p>
+<p>Both integration methods provide access to the same core assessment functionality.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/initialisation.jpg" class="img-fluid figure-img"></p>
+<figcaption>Program initialisation</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example_usage.jpg" class="img-fluid figure-img"></p>
+<figcaption>Example usage of the program</figcaption>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
