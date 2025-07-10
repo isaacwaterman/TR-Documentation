@@ -175,6 +175,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Usage</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./functions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Functions</span></a>
   </div>
@@ -220,12 +226,14 @@ window.Quarto = {
   <li><a href="#sssp_dijkstra_solver." id="toc-sssp_dijkstra_solver." class="nav-link" data-scroll-target="#sssp_dijkstra_solver."><code>sssp_dijkstra_solver(.)</code></a></li>
   <li><a href="#build_subnetwork." id="toc-build_subnetwork." class="nav-link" data-scroll-target="#build_subnetwork."><code>build_subnetwork(.)</code></a></li>
   <li><a href="#efficient_routes." id="toc-efficient_routes." class="nav-link" data-scroll-target="#efficient_routes."><code>efficient_routes(.)</code></a></li>
+  <li><a href="#calculate_link_usage." id="toc-calculate_link_usage." class="nav-link" data-scroll-target="#calculate_link_usage.">calculate_link_usage(.)</a></li>
   </ul></li>
   <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a>
   <ul class="collapse">
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#write_results." id="toc-write_results." class="nav-link" data-scroll-target="#write_results."><code>write_results(.)</code></a></li>
+  <li><a href="#write_link_matrix_json." id="toc-write_link_matrix_json." class="nav-link" data-scroll-target="#write_link_matrix_json."><code>write_link_matrix_json(.)</code></a></li>
   <li><a href="#write_subnetwork." id="toc-write_subnetwork." class="nav-link" data-scroll-target="#write_subnetwork."><code>write_subnetwork(.)</code></a></li>
+  <li><a href="#write_link_usage." id="toc-write_link_usage." class="nav-link" data-scroll-target="#write_link_usage.">write_link_usage(.)</a></li>
   </ul></li>
   <li><a href="#exception-handling-and-expected-behaviours" id="toc-exception-handling-and-expected-behaviours" class="nav-link" data-scroll-target="#exception-handling-and-expected-behaviours">Exception handling and expected behaviours</a></li>
   </ul>
@@ -261,11 +269,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
 <section id="parameter-input" class="level3">
 <h3 class="anchored" data-anchor-id="parameter-input">Parameter input</h3>
-<p>The program commences with a call to <code>test_initialiser(.)</code> which takes the following arguments:</p>
+<p>The program commences with a call to <code>analyse_network(.)</code> which takes the following arguments:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 66%">
+<col style="width: 35%">
+<col style="width: 64%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -281,7 +289,15 @@ window.Quarto = {
 <td>the file path to the adjacency list (a text file)</td>
 </tr>
 <tr class="even">
-<td>user_specified_write_results</td>
+<td>compute_route_diversity</td>
+<td>Boolean to compute the route diversity (i.e.&nbsp;the number of unique routes between nodes)</td>
+</tr>
+<tr class="odd">
+<td>compute_link_usage</td>
+<td>Boolean to compute the link usage (i.e.&nbsp;the number of routes that utilise a link)</td>
+</tr>
+<tr class="even">
+<td>should_write_results</td>
 <td>Boolean to write the resulting matrix/ matrices to a JSON and subnetwork adjacency list to a text file</td>
 </tr>
 <tr class="odd">
@@ -290,7 +306,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Note that this program assesses single origin paths only. While many origin nodes can be inputted, each one is assessed individually and independently of the other specified origin nodes.</p>
+<p>Note that this program assesses single origin paths only. Early versions of the program allowed multiple origin nodes to be specified at initialisation, however this functionality was removed for performance reasons. A similar function <code>process_link_usage_only(.)</code> exists which only computes the link usage and does not compute the efficient routes. This is for cases where the efficient routes matrix is pre-computed and can be loaded by the program.</p>
 </section>
 <section id="command-line-interface" class="level3">
 <h3 class="anchored" data-anchor-id="command-line-interface">Command Line Interface</h3>
@@ -349,8 +365,8 @@ Note
 <p>This function solves the Single-Source Shortest Path (SSSP) problem using the Dijkstra algorithm. SSSP solves the shortest path from origin to all other nodes. <code>sssp_dijkstra_solver(.)</code> requires the following inputs:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -386,8 +402,8 @@ Note
 <p>This function applies the short detour/ not-too-long criteria to the road network to subset the network to only nodes and links which meet the criteria.<code>build_subnetwork(.)</code> requires the following inputs:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -412,8 +428,8 @@ Note
 <p>This function applies the efficient route calculations. It takes the following inputs:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -451,6 +467,36 @@ Caution
 </div>
 </div>
 </section>
+<section id="calculate_link_usage." class="level3">
+<h3 class="anchored" data-anchor-id="calculate_link_usage.">calculate_link_usage(.)</h3>
+<p>This function calculates the link usage for each link in the network. It takes the following inputs: | | | |——————–|—————————————————-| | start_node | An integer specifying the origin node for which to calculate the link usage | | routes_matrix | A matrix containing the number of efficient routes between the origin node and all other nodes in the subnetwork | | node_index_map | A vector containing the mapping of node indices to their original indices in the input adjacency list |</p>
+<p>The function iterates through the routes matrix and counts the number of times each link is used in the efficient routes. The result is a matrix containing the link usage for each link in the network.</p>
+<p>For efficiency, simple matrix multiplication is not used. Instead, the valid links from the routes_matrix are pre-computed and iterated through. This reduces the total number of computations than would be required if the entire routes matrix was used.The basis for the calculation can be found in <a href="#assessing-link-usage">#assessing-link-usage</a>.</p>
+<p>The computational routine consists of:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Iterate through all possible destination nodes 's' (using index)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="bu">std::</span>int64_t s <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> s <span class="op">&lt;</span> total_nodes<span class="op">;</span> <span class="op">++</span>s<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>r <span class="op">==</span> s<span class="op">)</span> <span class="cf">continue</span><span class="op">;</span> <span class="co">// Skip self-connections (compare indices)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// For each link in the network (using indices)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="at">const</span> <span class="kw">auto</span><span class="op">&amp;</span> link <span class="op">:</span> links<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">std::</span>int64_t tail <span class="op">=</span> link<span class="op">.</span>tail<span class="op">;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="bu">std::</span>int64_t head <span class="op">=</span> link<span class="op">.</span>head<span class="op">;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="bu">std::</span>int64_t routes_to_tail <span class="op">=</span> routes_matrix<span class="op">[</span>r<span class="op">][</span>tail<span class="op">];</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="bu">std::</span>int64_t routes_from_head <span class="op">=</span> routes_matrix<span class="op">[</span>head<span class="op">][</span>s<span class="op">];</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="co">// Calculate usage only if both parts are non-zero</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>routes_to_tail <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> routes_from_head <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                <span class="bu">std::</span>int64_t usage <span class="op">=</span> routes_to_tail <span class="op">*</span> routes_from_head<span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                <span class="co">// Convert matrix indices back to actual node IDs for the result structure</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                <span class="bu">std::</span>int64_t dest_id <span class="op">=</span> index_to_node<span class="op">[</span>s<span class="op">];</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="bu">std::</span>int64_t tail_id <span class="op">=</span> index_to_node<span class="op">[</span>tail<span class="op">];</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                <span class="bu">std::</span>int64_t head_id <span class="op">=</span> index_to_node<span class="op">[</span>head<span class="op">];</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                results<span class="op">.</span>push_back<span class="op">({</span> origin_id<span class="op">,</span> dest_id<span class="op">,</span> tail_id<span class="op">,</span> head_id<span class="op">,</span> usage <span class="op">});</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="outputs" class="level2">
 <h2 class="anchored" data-anchor-id="outputs">Outputs</h2>
@@ -458,19 +504,19 @@ Caution
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section"></h3>
 </section>
-<section id="write_results." class="level3">
-<h3 class="anchored" data-anchor-id="write_results."><code>write_results(.)</code></h3>
+<section id="write_link_matrix_json." class="level3">
+<h3 class="anchored" data-anchor-id="write_link_matrix_json."><code>write_link_matrix_json(.)</code></h3>
 <p>This function uses the <a href="https://github.com/nlohmann">JSON for Modern C++ library created by Nlohmann</a> to save the result matrices as into a single JSON file. The JSON format provides flexibility in saving several matrices of different sizes within a single file which cannot easily be achieved using a text file, for example.</p>
-<p>The <code>write_results(.)</code> function requires two inputs:</p>
+<p>The <code>write_link_matrix_json(.)</code> function requires two inputs:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>results</td>
-<td>a 3D matrix of integers comprised of one or more 2D result matrices</td>
+<td>The link matrix to be written, where each row represents connections between nodes</td>
 </tr>
 <tr class="even">
 <td>output_path</td>
@@ -478,7 +524,7 @@ Caution
 </tr>
 </tbody>
 </table>
-<p>When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_Results.json”</p>
+<p>Creates or overwrites a file at output_path. The file contains a pretty-printed JSON array, representing the matrix. When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_Results.json”</p>
 </section>
 <section id="write_subnetwork." class="level3">
 <h3 class="anchored" data-anchor-id="write_subnetwork."><code>write_subnetwork(.)</code></h3>
@@ -486,8 +532,8 @@ Caution
 <p>The function requires three inputs:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 29%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -505,6 +551,29 @@ Caution
 </tbody>
 </table>
 <p>The subnetworks are saved as a text file. When the program is called through the <code>test_initialiser(.)</code> function the <code>output_path</code> is set to the same directory as the input adjacency list. The file will be saved as “{input graph name}_SubNetwork.txt”</p>
+</section>
+<section id="write_link_usage." class="level3">
+<h3 class="anchored" data-anchor-id="write_link_usage.">write_link_usage(.)</h3>
+<p>This function Writes link usage statistics to a CSV text file. Inputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>link_usage</td>
+<td>A vector containing link usage data, where each entry represents the usage count of a specific link (tail, head) for an origin-destination pair. Generated from the <code>calculate_link_usage(.)</code> function.</td>
+</tr>
+<tr class="even">
+<td>file_path</td>
+<td>A string specifying the output path (including file name and .CSV extension) for the results to be saved into.</td>
+</tr>
+</tbody>
+</table>
+<p>It creates or overwrites a file at file_path. The file contains a header:</p>
+<pre class="origin,destination,tail,head,usage_count"><code></code></pre>
+<p>Each subsequent line records the origin node, destination node, link tail, link head, and usage count, separated by commas.</p>
 </section>
 </section>
 <section id="exception-handling-and-expected-behaviours" class="level2">
