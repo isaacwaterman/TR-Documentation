@@ -177,8 +177,11 @@ window.Quarto = {
   <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a>
   <ul class="collapse">
   <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory</a></li>
+  <li><a href="#network-redundancy-through-route-diversity" id="toc-network-redundancy-through-route-diversity" class="nav-link" data-scroll-target="#network-redundancy-through-route-diversity">Network Redundancy Through Route Diversity</a></li>
   <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#route-selection-criteria" id="toc-route-selection-criteria" class="nav-link" data-scroll-target="#route-selection-criteria">Route Selection Criteria</a></li>
   <li><a href="#assessing-link-usage" id="toc-assessing-link-usage" class="nav-link" data-scroll-target="#assessing-link-usage">Assessing Link Usage</a></li>
+  <li><a href="#calculation-method" id="toc-calculation-method" class="nav-link" data-scroll-target="#calculation-method">Calculation Method</a></li>
   </ul></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
@@ -208,28 +211,47 @@ window.Quarto = {
 
 <section id="this-page" class="level2">
 <h2 class="anchored" data-anchor-id="this-page">This page</h2>
-<p>This page covers the functionality and theory behind the Travel Route Diversity program. Each subsection introduces an aspect of the program’s function and discusses how the program approaches the problem. A high level summary is provided in the project README, and an introduction to the method’s theory is presented in the <a href="#motivation">Motivation</a> section.</p>
+<p>This page covers the functionality and theory behind the Travel Route Diversity program. Each subsection introduces an aspect of the program’s function and discusses how the program approaches the problem. A high-level summary is provided in the project README, and an introduction to the method’s theory is presented in the <a href="#motivation">Motivation</a> section.</p>
 </section>
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>This program provides an implementation of a network based metric of transport network redundancy.</p>
+<p>This program provides an implementation of a network-based metric of transport network redundancy. Understanding route diversity is crucial for network planning, as it reveals how resilient a transportation system is to disruptions and how many alternative paths travelers have available</p>
 <section id="theory" class="level3">
 <h3 class="anchored" data-anchor-id="theory">Theory</h3>
-<p>Capturing the number of efficient routes and identifying shared links allows network planners to understand the redundancy of the network topology by considering the route diversity under normal and disrupted network conditions. Route diversity can be measured in many ways: here we implement not-too-long criteria to measure short detours from the shortest path that incur little additional cost.</p>
-<p>Travelers along a road network may not always consider the shortest route: it may not even be possible for a traveler to know the shortest route. Short detoured routes with an acceptable additional cost may also be considered with the same preference as the lowest-cost route. During disruption to a network (through natural disaster or otherwise) a traveler may consider substituting a short detoured route for a disrupted primary route without incurring substantial additional costs.</p>
-<p>Additionally, if many routes share a single link, disruption to the shared link will have a substantial impact on the total number of available routes.</p>
+</section>
+<section id="network-redundancy-through-route-diversity" class="level3">
+<h3 class="anchored" data-anchor-id="network-redundancy-through-route-diversity">Network Redundancy Through Route Diversity</h3>
+<p>Capturing the number of efficient routes and identifying shared links allows network planners to understand the redundancy of the network topology by considering route diversity under both normal and disrupted network conditions.</p>
+<p>Route diversity can be measured in various ways. This program implements a “not-too-long” criteria to measure short detours from the shortest path that incur little additional cost. This approach recognizes that:</p>
+<ul>
+<li><p><strong>Travelers don’t always take the shortest route</strong> - It may not even be possible for a traveler to know the true shortest route</p></li>
+<li><p><strong>Multiple acceptable routes exist</strong> - Short detoured routes with acceptable additional cost may be considered with the same preference as the lowest-cost route</p></li>
+<li><p><strong>Disruption resilience matters</strong> - During network disruption (through natural disaster or otherwise), a traveler may substitute a short detoured route for a disrupted primary route without incurring substantial additional costs</p></li>
+<li><p><strong>Shared links create vulnerabilities</strong> - If many routes share a single link, disruption to that shared link will have a substantial impact on the total number of available routes</p></li>
+</ul>
 </section>
 <section id="implementation" class="level3">
 <h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
-<p>In this program, the routes that are considered include only the links that move the traveler further away from the start of the origin, this is to say</p>
+</section>
+<section id="route-selection-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="route-selection-criteria">Route Selection Criteria</h3>
+<p>The program considers only routes that consistently move the traveler away from the origin. Mathematically, this means including only links where:</p>
 <p><span class="math display">\[ l_r(head_a)&gt;l_r(tail_a)\]</span></p>
 <p>where <span class="math inline">\(head_a\)</span> and <span class="math inline">\(tail_a\)</span> are the head and tail of link <span class="math inline">\(a\)</span>, and <span class="math inline">\(l_r(head_a)\)</span> and <span class="math inline">\(l_r(tail_a)\)</span> are the cost from the origin <span class="math inline">\(r\)</span> to the head and tail of the link, respectively. We assess the short detour routes by sub-setting the links is only reasonably more costly than the shortest path. This criterion is enforced using an elongation ratio, <span class="math inline">\(\tau^a_r\)</span>, which typically ranges between 1.3 - 1.6 (this program uses 1.6 by default). Mathematically, the short detour criteria can be expressed as:</p>
 <p><span class="math display">\[(1+\tau^a_r)(l_r(head_a) - l_r(tail_a))\geq l_a\]</span> where <span class="math inline">\(l_a\)</span> is the cost of link <span class="math inline">\(a\)</span>.</p>
 </section>
 <section id="assessing-link-usage" class="level3">
 <h3 class="anchored" data-anchor-id="assessing-link-usage">Assessing Link Usage</h3>
-<p>Based on the number of effective routes calculates using the program, the number of efficient routes using a specific link can also be determined. This is particularly useful to determine the criticality or importance of a link in the network. It can also be used to determine the determine the number of routes that will be disrupted if a link is to fail.</p>
-<p>While this functionality is not currently implemented into the program, it can be calculated using the results matrix using the following:</p>
+<p>Based on the number of effective routes calculated by the program, the number of efficient routes using a specific link can also be determined. This analysis is particularly useful for:</p>
+<ul>
+<li><p><strong>Determining link criticality</strong> - Understanding the importance of individual links in the network</p></li>
+<li><p><strong>Assessing disruption impact</strong> - Determining how many routes will be affected if a link fails</p></li>
+<li><p><strong>Network vulnerability analysis</strong> - Identifying critical infrastructure components</p></li>
+</ul>
+</section>
+<section id="calculation-method" class="level3">
+<h3 class="anchored" data-anchor-id="calculation-method">Calculation Method</h3>
+<p>While this functionality is not currently implemented in the program, it can be calculated using the results matrix:</p>
 <p><span class="math display">\[
 N^{rs}_a=u(r,tail_a)\times u(head_a,s)
 \]</span></p>
